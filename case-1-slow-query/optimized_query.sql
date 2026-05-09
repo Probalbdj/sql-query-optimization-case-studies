@@ -1,0 +1,1 @@
+-- Indexes addedCREATE INDEX idx_orders_customer_id ON orders(customer_id);CREATE INDEX idx_orders_order_date ON orders(order_date);-- Optimized querySELECT c.customer_name, SUM(o.amount) as total_spentFROM orders oJOIN customers c ON o.customer_id = c.idWHERE o.order_date >= '2023-01-01'GROUP BY c.id, c.customer_nameORDER BY total_spent DESC;

@@ -1,0 +1,1 @@
+SELECT c.customer_name, SUM(o.amount) as total_spentFROM orders oJOIN customers c ON o.customer_id = c.idWHERE o.order_date >= '2023-01-01'GROUP BY c.customer_nameORDER BY total_spent DESC;
